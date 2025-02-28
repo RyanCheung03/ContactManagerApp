@@ -1,0 +1,21 @@
+# Ignore Visual Studio cache and temporary files
+.vscode/
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore NuGet packages
+packages/
+*.nupkg
+project.lock.json
+project.assets.json
+
+# Ignore logs and temp files
+*.log
+temp/

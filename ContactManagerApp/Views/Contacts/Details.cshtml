@@ -1,0 +1,53 @@
+﻿@model ContactManagerApp.Models.Contact
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="display-6 mt-2">Details of Contact</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new {@class="btn btn-success mb-3"})
+    <br />
+    <a href="@Url.Action("Index")" class="btn btn-secondary">
+        <i class="bi bi-arrow-return-left"></i> Back to List
+    </a>
+</div>

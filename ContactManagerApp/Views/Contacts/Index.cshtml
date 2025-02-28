@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ContactManagerApp.Models.Contact>
+
+@{
+    ViewBag.Title = "View Contacts";
+}
+
+<h2 class="display-6 align-content-center mt-2">List of Contacts</h2>
+<hr />
+
+<p>
+    @Html.ActionLink("Create New Contact", "Create", null, new { @class = "btn btn-primary" })
+</p>
+
+<!-- Search Box -->
+<div class="input-group mb-3 w-50">
+    <select id="searchType" class="form-select">
+        <option value="Name" selected>Name</option>
+        <option value="Email">Email</option>
+        <option value="Phone">Phone</option>    
+        <option value="Company">Company</option>
+    </select>
+    <input type="text" id="searchBox" class="form-control" placeholder="Search by Name...">
+</div>
+
+<!-- Container for Contact List -->
+<div id="contactsContainer">
+    @Html.Partial("_ContactListPartial", Model)
+</div>
+
+
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#searchBox").on("keyup", function () {
+                var searchTerm = $(this).val();
+                var searchType = $("#searchType").val();
+
+                $.ajax({
+                    url: '@Url.Action("Search", "Contacts")',
+                    type: 'GET',
+                    data: { searchTerm: searchTerm, searchType: searchType },
+                    success: function (result) {
+                        $("#contactsContainer").html(result);
+                    },
+                    error: function () {
+                        alert('Error while fetching contacts.');
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            $("#searchType").on("change", function () {
+                var selectedOption = $(this).val();
+                $("#searchBox").attr("placeholder", "Search by " + selectedOption + "...");
+            });
+        });
+    </script>
+}

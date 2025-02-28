@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row mt-2" aria-labelledby="aspnetTitle">
+        <h1 id="title" class="display-5">Welcome to Your Contact Manager Application</h1>
+        <p class="lead">Effortlessly manage your personal and professional contacts with our simple and intuitive contact management system. Built using ASP.NET MVC, 
+        C#, Bootstrap, and jQuery, with secure data storage powered by Microsoft SQL Server.</p>
+    </section>
+
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Stay Organized</h2>
+            <p>
+                Store all your contact information securely in a Microsoft SQL Server Database. Easily view, update, and manage your contacts anytime.
+            </p>
+            <p><a class="btn btn-outline-dark" href=@Url.Action("Index", "Contacts")>View Your Contacts &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">Quickly Find What You Need</h2>
+            <p>Use the built-in search feature to instantly find contacts by name, company, or other details—saving you time when you need it most.</p>
+            @*<p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>*@
+        </section>
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+            <h2 id="hostingTitle">Add and Update On the Go</h2>
+            <p>
+                Create new contacts or edit existing details on the fly. Changes are instantly saved to the database, keeping your contact list up to date.
+            </p>
+            <p><a class="btn btn-outline-dark" href="@Url.Action("Create", "Contacts")">Create A Contact Now &raquo;</a></p>
+        </section>
+    </div>
+</main>
