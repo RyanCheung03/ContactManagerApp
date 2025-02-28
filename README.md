@@ -5,7 +5,7 @@ The **Contact Manager App** is a web-based application designed to help users ef
 
 ## Features
 - **Add, edit, and delete contacts**
-- **Search and filter contacts** by name, email, or phone number
+- **Search contacts** by name, email, or phone number
 - **Responsive UI** built with Bootstrap for a smooth user experience
 - **Database integration** for persistent contact storage
 - **Error handling and validation** for data consistency
@@ -13,9 +13,7 @@ The **Contact Manager App** is a web-based application designed to help users ef
 ## Technologies Used
 - **Backend:** ASP.NET Core (C#)
 - **Frontend:** Razor Views, Bootstrap
-- **Database:** SQL Server / Entity Framework
-- **Version Control:** Git & GitHub
-- **Scripting:** PowerShell (for automated processes)
+- **Database:** Microsoft SQL Server / Entity Framework
 
 ## Setup Instructions
 
